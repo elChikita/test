@@ -70,7 +70,7 @@ def find_median(arr):
 
 """
 Функции передается масив полученый ранее в create_list().
-Возвращается наибольшая последовательность чисел, которые увеличиватся.
+Возвращается последняя наибольшая последовательность чисел, которые увеличиватся.
 """
 def find_increase(arr):
     counter = 0
@@ -87,16 +87,17 @@ def find_increase(arr):
 
 """
 Функции передается масив полученый ранее в create_list().
-Возвращается наибольшая последовательность чисел, которые уменьшаются.
+Возвращается последняя наибольшая последовательность чисел, которые уменьшаются.
 """
 def find_decrease(arr):
     counter = 0
     max_counter = 0
     for i in range(len(arr)):
-        if int(arr[i]) < int(arr[i - 1]):
-            counter += 1
-            max_counter = counter if max_counter < counter else max_counter
-        else:
-            counter = 0
+        if i != 0 and i != int(len(arr)):   # Если убрать, то сравнивается первый и последний элемент
+            if int(arr[i]) < int(arr[i - 1]):
+                counter += 1
+                max_counter = counter if max_counter < counter else max_counter
+            else:
+                counter = 0
 
     return max_counter

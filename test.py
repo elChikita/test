@@ -1,6 +1,6 @@
 from BecomeADev2020 import *
 
-iList = create_list('')     # Путь к вашему файлу с целыми числами.
+iList = create_list('D:/Python Apps/test/10m.txt')     # Путь к вашему файлу с целыми числами.
 
 print('max value is:', find_minmax(iList, 'max'))   # Пример вызовов функций.
 print('min value is:', find_minmax(iList, 'min'))
